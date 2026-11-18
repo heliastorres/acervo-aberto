@@ -15,7 +15,7 @@ function Seta({ direcao = 'direita' }) {
 }
 
 function Cabecalho({ sobre }) {
-  return <header className="topo">
+  return <header id="/" className="topo">
     <div className="limite cabecalho">
       <a className="marca" href="#/" aria-label={instituicao.nome + ', início'}><img src="./marca.svg" width="36" height="36" alt="" />{instituicao.nome}</a>
       <nav aria-label="Principal">
@@ -65,7 +65,7 @@ function Catalogo({ filtros, definir }) {
     (!modalidade || p.modalidade === modalidade) && (!situacao || p.situacao === situacao) &&
     normalizar([p.titulo, p.resumo, p.modalidade, p.area, p.responsavel].join(' ')).includes(normalizar(busca)));
   const limpar = () => definir({ busca: '', modalidade: '', situacao: '' });
-  return <section id="acervo" className="catalogo" aria-labelledby="acervo-titulo">
+  return <section id="/acervo" className="catalogo" aria-labelledby="acervo-titulo">
     <div className="linha-catalogo">
       <h2 id="acervo-titulo" tabIndex="-1">Explore o acervo</h2>
       <label className="busca"><span className="lupa" aria-hidden="true" /><span className="sr">Buscar projeto, área ou equipe</span><input type="search" placeholder="Buscar projeto, área ou equipe" value={busca} onChange={e => definir({ ...filtros, busca: e.target.value })} /></label>
